@@ -24,7 +24,7 @@ let videoGrid = document.querySelector(".video__grid");
 var peer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
-  port: Port,
+  port: 443,
 });
 
 // Getting our stream

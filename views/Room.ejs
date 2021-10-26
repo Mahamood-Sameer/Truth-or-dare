@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Truth or Dare</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+      integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/Room.css" />
+    <script
+      src="https://cdn.socket.io/4.3.2/socket.io.min.js"
+      integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs"
+      crossorigin="anonymous"
+    ></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script>
+      const RoomId = "<%= roomId %>";
+    </script>
+  </head>
+  <body>
+    <img src="/Ribbon.png" alt="Logo" class="ribbon" />
+    <div class="container">
+      <div class="body__left">
+        <div class="body__videos">
+          <div class="video__grid"></div>
+        </div>
+        <div class="controllers">
+          <div class="body__mute__btn" onclick="MuteAndUnmute()">
+            <i class="fa fa-microphone icons"></i>
+          </div>
+          <div class="body__video__btn" onclick="Videooff()">
+            <i class="fa fa-video icons"></i>
+          </div>
+        </div>
+      </div>
+      <div class="body__right">
+        <h4><img src="/Image.png" alt="logo" class="logo" /> Truth or Dare</h4>
+        <div class="participants__container">
+          <div class="participants">
+            <i class="fa fa-users"></i>
+            <span>Participants chat section</span>
+          </div>
+          <div class="participants__list">
+              
+          </div>
+          <form onsubmit="SubmitName(event)">
+            <input type="text" placeholder="Type a message....">
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!-- Scripts -->
+  <script src="/Room.js"></script>
+</html>

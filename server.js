@@ -3,6 +3,9 @@ const express = require("express");
 
 const app = express();
 
+// port
+const port = process.env.PORT || 8000
+
 //Random Id generator
 const { v4: uuidv4 } = require("uuid");
 
@@ -32,7 +35,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/:id", (req, res) => {
-  res.render("Room.ejs", { roomId: req.params.id });
+  res.render("Room.ejs", { roomId: req.params.id , PORT:port});
 });
 
 // Socket Events ....
@@ -58,4 +61,4 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3000);
+server.listen(port);

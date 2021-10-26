@@ -11,7 +11,7 @@ if(Name){
 }else{
   Name = "user";
 }
-
+console.log(Port)
 // Our viedo
 let myVideo = document.createElement("video");
 myVideo.muted = true;
@@ -24,7 +24,7 @@ let videoGrid = document.querySelector(".video__grid");
 var peer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
-  port: "3000",
+  port: Port,
 });
 
 // Getting our stream

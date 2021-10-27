@@ -33,10 +33,14 @@ app.get("/", (req, res) => {
   var roomId = uuidv4();
   res.redirect(`/${roomId}`);
 });
-
+app.get('/leave',(req,res)=>{
+  res.render("Leave.ejs", { roomId: req.params.id});
+})
 app.get("/:id", (req, res) => {
   res.render("Room.ejs", { roomId: req.params.id , PORT:port});
 });
+
+
 
 // Socket Events ....
 

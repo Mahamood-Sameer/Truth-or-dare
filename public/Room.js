@@ -25,6 +25,7 @@ var peer = new Peer(undefined, {
   path: "/peerjs",
   host: "/",
   port: 443,
+  // port:8000,
 });
 
 // Getting our stream
@@ -172,3 +173,8 @@ socket.on("NameSent", (Messages) => {
   document.querySelector('.participants__list').scrollTo({ left: 0, top: 19999, behavior: "smooth" })
 });
 
+
+// Leave meet
+const Leave = ()=>{
+     window.open(`/leave`,'_self')
+}

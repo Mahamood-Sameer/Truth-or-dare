@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
   res.redirect(`/${roomId}`);
 });
 app.get('/leave',(req,res)=>{
-  res.render("Leave.ejs", { roomId: req.params.id});
+  res.render("Leave.ejs");
 })
 app.get("/:id", (req, res) => {
   res.render("Room.ejs", { roomId: req.params.id , PORT:port});
